@@ -19,4 +19,21 @@ body {
   input {
     width: 25em;
   }
+  button {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background: #ffdb77;
+      border-radius: 1rem;
+    }
+  }
+  .active {
+    background: #f7b500;
+      border-radius: 1rem;
+    &:hover {
+      background: #f7b500;
+    }
+  }
 }

@@ -24,21 +24,28 @@ gain1.connect(out)
 function App() {
   const [osc1Settings, setOsc1Settings] = useState({
     frequency: osc1.frequency.value ,
-    detune: osc1.detune.value
+    detune: osc1.detune.value,
+    type: osc1.type
   })
 
-  function changeOsc1(e){
+  function changeOsc1Settings(e){
     let {value, id} = e.target;
     setOsc1Settings({...osc1Settings, [id]: value})
     osc1[id].value = value
 }
+
+  function changeOsc1Type(e){
+    let {id} = e.target;
+    setOsc1Settings({...osc1Settings, type: id})
+    osc1.type = id;
+  }
 
   return (
     <>
     <h1>Sliders</h1>
     <button onClick={()=> osc1.start()}>Start</button>
     <button onClick={()=> osc1.stop()}>Stop</button>
-    <Osc1 changeSettings={changeOsc1} settings={osc1Settings}/>
+    <Osc1 changeSettings={changeOsc1Settings} settings={osc1Settings} changeType={changeOsc1Type} />
     </>
   )
 }
