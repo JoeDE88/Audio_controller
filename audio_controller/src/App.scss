@@ -1,11 +1,11 @@
 body {
-  background-color: #46B1C9;
+  background-color: #4D5382;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: #E7BB41
+  color: white
 }
 
 .control {
-  background: #260587;
+  background: #798071;
   margin:1.5rem;
   display: flex;
   flex-direction: column;
@@ -20,20 +20,24 @@ body {
     width: 25em;
   }
   button {
+    width: 8em;
     padding: 0.8rem;
+    margin: 0.5rem;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    border-radius: 1rem;
     &:hover {
-      background: #ffdb77;
+      background: #adadad;
       border-radius: 1rem;
     }
   }
   .active {
-    background: #f7b500;
-      border-radius: 1rem;
+    background: #001514;
+    color: white;
+    border-radius: 1rem;
     &:hover {
-      background: #f7b500;
+      background: #001514;
     }
   }
 }
