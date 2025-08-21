@@ -1,6 +1,22 @@
 body {
-  padding: 2rem;
-  background-color: #3ea3d5;
+  background-color: #46B1C9;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: white
+  color: #E7BB41
+}
+
+.control {
+  background: #260587;
+  margin:1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  h3 {
+    width: 100%;
+    text-align: center;
+  }
+  input {
+    width: 25em;
+  }
 }

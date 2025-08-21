@@ -23,6 +23,7 @@ gain1.connect(out)
 
 function App() {
   const [osc1Freq, setOsc1Freq] = useState(osc1.frequency.value)
+  const [osc1Detune, setOsc1Detune] = useState(osc1.detune.value)
 
   const changeOsc1Freq = (e) =>{
     let {value} = e.target;
@@ -30,12 +31,18 @@ function App() {
     osc1.frequency.value = value
   }
 
+  const changeOsc1Detune = (e) =>{
+    let {value} = e.target
+    setOsc1Detune(value)
+    osc1.detune.value = value
+  }
+
   return (
     <>
     <h1>Sliders</h1>
     <button onClick={()=> osc1.start()}>Start</button>
     <button onClick={()=> osc1.stop()}>Stop</button>
-    <Osc1 changeFreq={changeOsc1Freq} freq={osc1Freq}/>
+    <Osc1 changeFreq={changeOsc1Freq} freq={osc1Freq} changeDetune={changeOsc1Detune} detune={osc1Detune}/>
     </>
   )
 }
