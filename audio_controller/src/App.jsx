@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import './App.scss'
+import Osc1 from './components/Osc1';
 
 // se ejecuta una nueva de instancia de AudioContext solo una vez:
 let actx = new AudioContext();
@@ -20,12 +22,20 @@ gain1.connect(out)
 // osc1.start()
 
 function App() {
+  const [osc1Freq, setOsc1Freq] = useState(osc1.frequency.value)
+
+  const changeOsc1Freq = (e) =>{
+    let {value} = e.target;
+    setOsc1Freq(value)
+    osc1.frequency.value = value
+  }
 
   return (
     <>
     <h1>Sliders</h1>
     <button onClick={()=> osc1.start()}>Start</button>
     <button onClick={()=> osc1.stop()}>Stop</button>
+    <Osc1 changeFreq={changeOsc1Freq} freq={osc1Freq}/>
     </>
   )
 }
